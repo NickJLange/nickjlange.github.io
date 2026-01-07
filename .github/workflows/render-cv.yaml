@@ -32,7 +32,7 @@ jobs:
         run: uv python install 3.12
 
       - name: Install RenderCV
-        run: uv tool install rendercv
+        run: uv tool install rendercv[full]
 
       - name: Render CV
         run: |
