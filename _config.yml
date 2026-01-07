@@ -1,0 +1,43 @@
+# Site settings
+title: Nick J. Lange
+description: Founder | Architect | Engineer | Manager
+url: https://nickjlange.github.io
+baseurl: ""
+
+# Author
+author:
+  name: Nick J. Lange
+  email: jobs@wafuu.design
+  location: New York | Japan
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Jekyll configuration
+permalink: /blog/:year/:month/:day/:title/
+exclude:
+  - resume/
+  - .github/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

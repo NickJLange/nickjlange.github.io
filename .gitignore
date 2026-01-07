@@ -1,0 +1,42 @@
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# RenderCV output
+resume/cv/rendercv_output/
+
+# Built assets
+assets/resume.pdf
+assets/resume.html
+
+# Ruby
+Gemfile.lock
+.bundle/
+vendor/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.venv/
+venv/
+ENV/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log

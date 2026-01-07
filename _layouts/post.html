@@ -1,0 +1,16 @@
+---
+layout: blog
+---
+<article class="post">
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">
+        {{ page.date | date: "%B %d, %Y" }}
+        {% if page.author %} • {{ page.author }}{% endif %}
+    </div>
+    
+    {{ content }}
+    
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+        <a href="/blog">← Back to Blog</a>
+    </div>
+</article>
