@@ -22,7 +22,7 @@ Currently, Large frontier models:
 
 Not a great deal.
 
-Local Private AI is the how we retain human agency - trained for us, by us. Blue Pill. Every post on reddit, google search, funny video provides higher-quality input data to the next pre-training or synehtic training run.
+Local Private AI is the how we retain human agency - trained for us, by us. Blue Pill. Every post on reddit, google search, funny video provides higher-quality input data to the next pre-training or synthetic training run.
 
 So what if we, as a society, make a choice to starve the models and instead allocate the capital to narrow-AI that runs in the house? 
 
