@@ -4,42 +4,52 @@ title: Local Model Infrastructure & Network Refresh
 date: 2026-01-16
 ---
 
-# Infrastructure Catch-Up
+# Long Weekend, Big Goals
+## Private AI and the Bitter Lesson are not mutually exclusive
 
-Spent some time this week finally getting my local model infrastructure dialed in. Here's what's been keeping me busy.
+### Working Notes to move to 5L:
+- http://www.incompleteideas.net/IncIdeas/BitterLesson.html
+- https://en.wikipedia.org/wiki/Bitter_lesson
 
-## Daytona Setup Complete
+#### Hypothesis: We can retain human agency through getting distilled private AI models  into the hands of humans as normal technology, insteadof feeding large frontier models. 
 
-Got **[Daytona](https://daytona.io/)** fully configured for self-hosted model development. The UX is surprisingly polished - spins up dev environments in seconds with GPU access. Now I can iterate on model experiments without eating through my local compute budget.
+Currently, Large frontier models:
+- take human data without compensation
+- raise the prices of our electricity to generate better correlations between our data
+- sold back to us via existing big-tech advertising ecosystem, or monthly subscription fees
+- tripled the prices of consumer equipment (Disk, Ram) lowering 
+- add environmental impact for gas turbines (until we replace them)
 
-The killer feature for me is the pre-configured templates for common ML stacks. Jumped straight into fine-tuning without fighting environment config. Currently using it for vision model experiments - the CUDA environments just work out of the box.
+Not a great deal.
+
+Local Private AI is the how we retain human agency - trained for us, by us. Blue Pill. Every post on reddit, google search, funny video provides higher-quality input data to the next pre-training or synehtic training run.
+
+So what if we, as a society, make a choice to starve the models and instead allocate the capital to narrow-AI that runs in the house? 
+
+
+## Infrastructure Catch-Up
+
+Spent some time this week finally getting my head around farming out to multiple backends:
+- Modal
+- Daytona
+- People
+- Laptop
+- (Come Monday) RocM on our new AMD Strix Halo Node
+
+## Daytona Pipelines for Retraining
+
+Got **[Daytona](https://daytona.io/)** vibe  configured for self-hosted model development to train the "End to End" Pipeline from Data Wrangling to Quantizing for a RPI with executorch. 
+
+I'll begin picking through the AI generated mistakes this week, hopefully ahead of a thursday meetup.
 
 ## Modal Pipelines for Retraining
 
-Speaking of fine-tuning, **[Modal](https://modal.com/)** has become the backbone for automating model retraining. Built a pipeline that:
+Speaking of fine-tuning, **[Modal](https://modal.com/)** is online now and the sandbox funciton is quite interesting.  Apparently all the big frontier labs are investing massively in container/vm boot times...
 
-- Ingests new training data from my home camera feeds
-- Triggers fine-tuning jobs on custom object/person detection models
-- Validates output quality automatically on scheduled batches
-- Deploys approved models to the serving endpoint
-
-The key insight: small detection models fine-tuned on my specific camera angles outperform generic models on my use cases. Running custom architectures that I've iterated on for presence detection and doorbell scenarios.
-
-```python
-# Modal pipeline skeleton
-@app.function()
-def retrain_detection_model(dataset_path: str) -> str:
-    # Load annotated frames from home cameras
-    # Fine-tune with custom backbone
-    # Evaluate mAP on validation set
-    # Return model checkpoint if passing threshold
-```
-
-The automation means I can focus on data quality and annotation rather than babysitting training runs. Self-collected data from my own cameras gives better results than any public dataset for my specific use case.
 
 ## ExecuTorch for Edge Deployment
 
-On the deployment side, **[ExecuTorch](https://pytorch.org/executorch/)** has been a game changer for edge inference. Moving model execution from the cloud to local devices cuts latency and costs dramatically.
+On the deployment side, **[ExecuTorch](https://pytorch.org/executorch/)** has been a game changer for edge inference. I've got my first toy model running on a rpi4, after fixing a bug (pending merge). Exciting stuff.
 
 Currently targeting:
 - Home automation nodes for presence/motion detection
@@ -47,6 +57,8 @@ Currently targeting:
 - Standard x86 inference for dev workloads
 
 The export pipeline from PyTorch is surprisingly smooth. Quantized models run comfortably on constrained hardware. Local inference means no cloud dependencies for privacy-sensitive detection tasks.
+
+Now I just need a better model (e.g. nothing I've hand rolled)
 
 ## IPv6 ULA for IoT Network
 
