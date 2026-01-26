@@ -11,13 +11,12 @@ date: 2026-01-16
 - http://www.incompleteideas.net/IncIdeas/BitterLesson.html
 - https://en.wikipedia.org/wiki/Bitter_lesson
 
-#### Hypothesis: We can retain human agency through getting distilled private AI models  into the hands of humans as normal technology, insteadof feeding large frontier models. 
+#### Hypothesis: We can retain human agency through getting distilled private AI models  into the hands of humans as normal technology, instead of feeding large frontier models. 
 
 Currently, Large frontier models:
 - take human data without compensation
 - raise the prices of our electricity to generate better correlations between our data
 - sold back to us via existing big-tech advertising ecosystem, or monthly subscription fees
-- tripled the prices of consumer equipment (Disk, Ram) lowering 
 - add environmental impact for gas turbines (until we replace them)
 
 Not a great deal.
@@ -34,7 +33,7 @@ Spent some time this week finally getting my head around farming out to multiple
 - Daytona
 - People
 - Laptop
-- (Come Monday) RocM on our new AMD Strix Halo Node
+- (Come Monday) ROCm on our new AMD Strix Halo Node
 
 ## Daytona Pipelines for Retraining
 
@@ -91,7 +90,7 @@ fd79:797a:e9ef:0403::/58 → Building 5 (reserved)
 fd79:797a:e9ef:0404::/58 → Building 6 (reserved)
 ```
 
-Building 1 gets a /52, giving me room to split into multiple /56 subnets as needed. Buildings 2 and 3 use /58s (64 addresses each) for up to 60 devices.
+Building 1 gets a /52, giving me room to split into multiple /56 subnets as needed. Buildings 2 and 3 use /58s (64 /64 subnets each) for up to 60 devices.
 
 ### Configuration Example (Debian Router)
 
