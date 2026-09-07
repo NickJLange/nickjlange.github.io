@@ -1,5 +1,4 @@
---- 
-layout: default
+---
 title: Vacation and Serendipity
 date: 2025-07-16
 tags: [blog, travel, hardware, networking, rfid]
@@ -19,7 +18,7 @@ In this case, that's exactly what happened. While strolling through the backstre
 
 <!-- truncate -->
 
-### Serendipity at the Edge
+## Serendipity at the Edge
 
 This got me thinking about "passive" home automation—using RFID tags on non-powered items (like a specific coffee mug or a set of keys) to trigger local AI agents when they are "seen" by a reader. It’s a low-energy, privacy-preserving way to add context to a private AI assistant without cameras or battery-powered sensors.
 
