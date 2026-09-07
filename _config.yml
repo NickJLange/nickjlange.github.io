@@ -13,6 +13,7 @@ author:
 # Build settings
 markdown: kramdown
 highlighter: rouge
+future: true
 
 # Jekyll configuration
 permalink: /blog/:year/:month/:day/:title/
